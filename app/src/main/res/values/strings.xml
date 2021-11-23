@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Learn Kotlin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="learn_kotlin">Learn Kotlin</string>
+    <string name="sign_in">Sign In</string>
+    <string name="name">Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="confirm_passoword">Confirm Passoword</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="app_menu">app menu</string>
+    <string name="data_types">Variables and Data types</string>
+    <string name="control_flow">Loops/Control Flow</string>
+    <string name="oop_kotlin">Object Oriented Programming</string>
+    <string name="sign_up_query">Don\'t have an account? sign up</string>
+    <string name="signin_query">Aleady have an account? sign in</string>
+    <string name="kotlin_function_text">Functions</string>
+</resources>

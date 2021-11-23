@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Onboarding">
+
+    <data>
+        <variable
+            name="adapter"
+            type="com.example.learnkotlin.adapter.ItemAdapter" />
+        <import type="com.example.learnkotlin.data.Datasource"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:id="@+id/kotlin_icon_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/kotlin_icon" />
+            <TextView
+                android:layout_marginTop="@dimen/dimens_30"
+                android:layout_marginEnd="@dimen/dimens_30"
+                android:id="@+id/learn_kotlin_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Learn Kotlin\nFor Android"
+                android:gravity="end"
+                android:textAppearance="@style/header_text_style"/>
+        </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/kotlin_topics"
+        android:adapter="@{adapter}"/>
+    </LinearLayout>
+
+</layout>

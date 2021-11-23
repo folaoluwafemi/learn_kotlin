@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.SignIn">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.learnkotlin.fragments.SignIn" />
+        <import type="com.example.learnkotlin.R"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_marginTop="@dimen/dimens_40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/header_text_style"
+                android:text="@string/sign_in"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_marginTop="240dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="@dimen/dimens_50"
+                    android:layout_width="@dimen/dimens_350"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signin_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/email_address"
+                        android:textAppearance="@style/text_style" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_marginTop="@dimen/dimens_30"
+                    android:layout_width="@dimen/dimens_350"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/signin_password"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:textAppearance="@style/text_style" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/signup_query"
+                    android:layout_marginTop="@dimen/dimens_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up_query"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/text_style"
+                    android:onClick="@{()-> viewModel.navCon.navigate(R.id.action_signIn_to_signUp)}"/>
+                <Button
+                    android:id="@+id/signin_btn"
+                    android:layout_marginTop="@dimen/dimens_80"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_in"
+                    android:layout_gravity="center"
+                    android:textAllCaps="false"
+                    android:onClick="@{()-> viewModel.signIn()}"/>
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
+</layout>
