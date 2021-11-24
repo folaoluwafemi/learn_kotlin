@@ -17,4 +17,6 @@
     <string name="sign_up_query">Don\'t have an account? sign up</string>
     <string name="signin_query">Aleady have an account? sign in</string>
     <string name="kotlin_function_text">Functions</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="learn_kotlin_for_android">Learn Kotlin\nFor Android</string>
 </resources>

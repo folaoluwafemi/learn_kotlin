@@ -41,5 +41,9 @@
     <fragment
         android:id="@+id/onboarding"
         android:name="com.example.learnkotlin.fragments.Onboarding"
-        tools:layout="@layout/fragment_onboarding" />
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboarding_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
 </navigation>

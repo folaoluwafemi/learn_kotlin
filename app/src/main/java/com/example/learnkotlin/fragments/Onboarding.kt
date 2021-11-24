@@ -1,8 +1,6 @@
 package com.example.learnkotlin.fragments
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -14,7 +12,7 @@ import com.example.learnkotlin.databinding.FragmentOnboardingBinding
 
 
 class Onboarding : Fragment() {
-    private lateinit var navCon: NavController
+    lateinit var navCon: NavController
     private lateinit var _binding: FragmentOnboardingBinding
     private val binding get() = _binding
     override fun onCreateView(
@@ -28,6 +26,9 @@ class Onboarding : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        binding.viewModel = this
         binding.adapter = ItemAdapter(this.requireContext(), Datasource().load_topics())
+        requireActivity().onNavigateUp()
     }
 }

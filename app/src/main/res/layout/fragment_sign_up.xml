@@ -111,6 +111,7 @@
             android:layout_marginBottom="@dimen/dimens_50"
             android:text="@string/sign_up"
             android:textAllCaps="false"
+            android:textAppearance="@style/text_style"
             android:onClick="@{()-> viewModel.signUp()}"/>
 
     </LinearLayout>

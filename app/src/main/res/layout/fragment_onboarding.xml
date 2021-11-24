@@ -6,42 +6,57 @@
 
     <data>
         <variable
+            name="viewModel"
+            type="com.example.learnkotlin.fragments.Onboarding" />
+        <variable
             name="adapter"
             type="com.example.learnkotlin.adapter.ItemAdapter" />
         <import type="com.example.learnkotlin.data.Datasource"/>
+        <import type="com.example.learnkotlin.R"/>
     </data>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
-            <ImageView
-                android:id="@+id/kotlin_icon_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/kotlin_icon" />
-            <TextView
-                android:layout_marginTop="@dimen/dimens_30"
-                android:layout_marginEnd="@dimen/dimens_30"
-                android:id="@+id/learn_kotlin_text"
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Learn Kotlin\nFor Android"
-                android:gravity="end"
-                android:textAppearance="@style/header_text_style"/>
-        </RelativeLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/kotlin_topics"
-        android:adapter="@{adapter}"/>
-    </LinearLayout>
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+                    <ImageView
+                        android:id="@+id/kotlin_icon_image"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/kotlin_icon"
+                        android:importantForAccessibility="no"/>
+                    <TextView
+                        android:layout_marginTop="@dimen/dimens_30"
+                        android:layout_marginEnd="@dimen/dimens_30"
+                        android:id="@+id/learn_kotlin_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/learn_kotlin_for_android"
+                        android:gravity="end"
+                        android:textAppearance="@style/header_text_style"/>
+                </RelativeLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/kotlin_topics"
+                    android:adapter="@{adapter}"/>
+                <Button
+                    android:layout_below="@id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_out"
+                    android:onClick="@{()-> viewModel.navCon.navigate(R.id.action_onboarding_to_signIn)}"
+                    android:layout_marginTop="@dimen/dimens_30"
+                    />
+            </LinearLayout>
 
+        </ScrollView>
 </layout>
