@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.SignUp">
     <data>
         <variable
@@ -69,7 +70,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="@dimen/dimens_30"
             android:layout_width="@dimen/dimens_350"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/signup_password"
                 android:backgroundTint="@color/white"
@@ -82,7 +84,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="@dimen/dimens_30"
             android:layout_width="@dimen/dimens_350"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirm_password"
                 android:layout_width="match_parent"
